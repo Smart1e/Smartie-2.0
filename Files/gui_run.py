@@ -1,6 +1,7 @@
 import tkinter as tk
 from time import sleep
 
+
 loop = 0
 root = tk.Tk()
 root.geometry("1000x806")
@@ -56,6 +57,12 @@ class sign_in_ui():
     """
 
     def transition(passthrough1, passthrough2):
+        import backend
+        
+        username = sign_in_ui.Entry0.get()
+        password = sign_in_ui.Entry1.get()
+        backend.json_things.create_json('English', username, password)
+        
         sign_in_ui.remove()
         sign_in_ui.in_root = False
         window_size = update_root_size(root)
